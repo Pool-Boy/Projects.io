@@ -1,0 +1,549 @@
+/* CSS Document */
+:root 
+{
+    --primaryColour: black;
+    --secondaryColour: white;
+}
+
+@font-face
+{
+	font-family: nullpimport;
+	src: url("css/fonts/nullp.ttf");
+}
+
+@font-face 
+{
+    font-family: misterPixel;
+    src: url("css/fonts/MisterPixelRegular.otf");
+}
+
+html, body 
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body
+{
+    transition: all 0.15s ease-out;
+}
+
+a
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+.Light, .Dark, .Yellow
+{
+    background: var(--secondaryColour);
+    color: var(--primaryColour);
+}
+
+.Light 
+{
+    --primaryColour: black;
+    --secondaryColour: white;
+}
+
+.Dark 
+{
+    --primaryColour: white;
+    --secondaryColour: black;
+}
+
+.Yellow 
+{
+    --primaryColour: yellow;
+    --secondaryColour: #99ff99;
+}
+
+/*----------Highlight Colour Change----------*/
+::selection 
+{
+    background: #99ff99;
+}
+
+/*----------Dock----------*/
+#divdockmain
+{
+    top: 64px;
+    position: relative;
+    font-family: nullpimport;
+    border: 4px solid var(--primaryColour);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.home-btn, .projects-btn, .contactInfo-btn, .resume-btn 
+{
+    width: 25%;
+    float: left;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.home-btn :hover, .projects-btn :hover, .contactInfo-btn :hover, .resume-btn :hover, #divupdatesmain :hover, divmarqueeUpdatesMain :hover 
+{
+    background: var(--primaryColour);
+    color: var(--secondaryColour);
+}
+
+/*----------Title Marquee----------*/
+#divmarqueemain
+{
+    position: relative;
+    top: 34px;
+    font-family: nullpimport;
+    border: solid var(--primaryColour);
+    border-bottom: none;
+    border-width: 2px 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: scaleY(2);
+}
+
+#divmarqueemain:hover
+{
+	background-color: var(--primaryColour);
+	color: var(--secondaryColour);
+}
+
+#divmarquee1 
+{
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+}
+
+#divmarquee2 
+{
+    display: inline-block;
+    animation: marquee2 15s linear infinite;
+    animation-delay: 7.5s;
+}
+
+@keyframes marquee 
+{
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee2 
+{
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+/*----------Footer----------*/
+
+/*----------Table Initialisation----------*/
+#divcolumnmain 
+{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+/*----------Recent Updates----------*/
+#divUpdates-clm 
+{
+    position: relative;
+    top: 96px;
+    margin-right: 79vw;
+    float: right;
+    display: table-cell;
+}
+
+#divupdatesmain, #divbiomain 
+{
+    position: relative;
+    font-family: nullpimport;
+    border: 4px solid var(--primaryColour);
+}
+
+#divupdatesmain, #changeTheme-btn
+{
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 16.15vw;
+}
+
+#divupdatesmain
+{
+    border-radius: 10px 10px 0 0;
+}
+
+#divbiomain 
+{
+    top: 1vw;
+    padding: 2em;
+    border-radius: 10px;
+    text-align: justify;
+    overflow: hidden;
+    background: var(--secondaryColour);
+}
+
+#divBio-tag
+{
+    z-index: 1;
+    border: 4px solid var(--primaryColour);
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--secondaryColour);
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+#divbodymain 
+{
+    margin-top: 96px;
+    right: 26%;
+    left: 26%;
+    position: absolute;
+    display: table-cell;
+    overflow: hidden;
+}
+
+/*----------Change Theme----------*/
+#changeTheme-btn 
+{
+    border-radius: 10px;
+    color: var(--primaryColour);
+    top: 72px;
+    border: 4px solid var(--primaryColour);
+    position: relative;
+    cursor: pointer;
+    padding: 0.5em;
+    /*background: var(--secondaryColour);*/
+    transition: all 0.15s ease-out;
+    background: transparent;
+    --themeSlide: -100%;
+}
+
+#changeTheme-bk
+{
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    position: absolute;
+    background: var(--primaryColour);
+    transition: all 0.15s ease-out;
+}
+
+.Yellow #changeTheme-bk
+{
+    background: var(--secondaryColour);
+    left: 0;
+}
+
+.Dark #changeTheme-bk
+{
+    left: 100%;
+}
+
+/*----------Updates Marquee----------*/
+#divmarqueeUpdatesMain 
+{
+    top: 28px;
+    width: 16.15vw;
+    position: relative;
+    font-family: nullpimport;
+    border: solid var(--primaryColour);
+    border-width: 0.75px 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: scaleY(3);
+    border-top: none;
+
+    border-radius: 0 0 5px 5px;
+}
+
+#divmarqueeUpdatesMain:hover 
+{
+        background-color: var(--primaryColour);
+        color: var(--secondaryColour);
+}
+
+#divmarqueeUpdates1 
+{
+    float: left;
+    display: inline-block;
+    animation: marquee3 15s linear infinite;
+}
+
+#divmarqueeUpdates2 
+{
+    display: inline-block;
+    animation: marquee4 15s linear infinite;
+    animation-delay: 7.5s;
+}
+
+@keyframes marquee3 
+{
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee4 
+{
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+/*----------Slider----------*/
+
+#beffibInfo-tag
+{
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: var(--secondaryColour);
+    position: absolute;
+    margin-top: 3vw;
+    border: solid 4px var(--primaryColour);
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    left: 0vw;
+}
+
+#beffibInfo 
+{
+    text-align: justify;
+    overflow: hidden;
+    padding: 2em;
+    background: var(--secondaryColour);
+    margin-top: 4vw;
+    border: solid 4px var(--primaryColour);
+    border-radius: 10px;
+}
+
+.container 
+{
+    display: inline-block;
+    top: 0;
+    left: 0;
+    position: relative;
+    border-radius: 10px;
+    transform: scale(0.5);
+    width: 100%;
+    height: 100%;
+    padding-bottom: 40%;
+    user-select: none;
+    box-shadow: 0 11px 22px rgba(255, 255, 255, 0.20), 0 7px 7px rgba(255, 255, 255, 0.24);
+    border: solid 8px var(--primaryColour);
+}
+
+.container input 
+{
+    display: none;
+}
+
+.container .slide_img 
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container .slide_img img 
+{
+    border-radius: 5px;
+    width: inherit;
+    height: inherit;
+}
+
+.container .slide_img .prev, .container .slide_img .next 
+{
+    width: 12%;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    background-color: rgba(255, 255, 255, .05);
+    z-index: 99;
+    transition: 0.45s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.container .slide_img .next 
+{
+    right: 0;
+}
+
+.container .slide_img .prev 
+{
+    left: 0;
+}
+
+.container .slide_img .prev:hover, .container .slide_img .next:hover 
+{
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, .8);
+}
+
+.container .slide_img .prev span, .container .slide_img .next span 
+{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: solid 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*----------Left Arrow----------*/
+.container .slide_img .prev span 
+{
+    border-color: transparent var(--secondaryColour) transparent transparent;
+    right: 35%;
+}
+
+/*----------Right Arrow----------*/
+.container .slide_img .next span 
+{
+    border-color: transparent transparent transparent var(--secondaryColour);
+    left: 35%;
+}
+
+.container #nav_slide
+{
+    width: 100%;
+    bottom: 12%;
+    height: 11px;
+    position: absolute;
+    text-align: center;
+    z-index: 99;
+    cursor: default;
+}
+
+.container #nav_slide .dots 
+{
+    top: -5px;
+    width: 32px;
+    height: 32px;
+    margin: 0 3px;
+    position: relative;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.container #nav_slide #dot1:hover 
+{
+    background: white;
+}
+
+.container #nav_slide #dot2:hover 
+{
+    background: white;
+}
+
+.container #nav_slide #dot3:hover 
+{
+    background: white;
+}
+
+#i1:checked ~ #one, #i2:checked ~ #two, #i3:checked ~ #three 
+{
+    z-index: 9;
+    animation: scroll 1s ease-in-out;
+}
+
+#i1:checked ~ #nav_slide #dot1
+{
+    background: white;
+}
+
+#i2:checked ~ #nav_slide #dot2 
+{
+    background: white;
+}
+
+#i3:checked ~ #nav_slide #dot3 
+{
+    background: white;
+}
+
+@keyframes scroll 
+{
+    0% 
+    {
+        opacity: 0.4;
+    }
+
+    100% 
+    {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 685px) 
+{
+    .container 
+    {
+        border: none;
+        width: 100%;
+        height: 0;
+        padding-bottom: 55%;
+    }
+
+    .container .slide_img .prev, .container .slide_img .next 
+    {
+        width: 15%;
+    }
+
+    .container .slide_img .prev span, .container .slide_img .next span 
+    {
+        border: solid 12px;
+    }
+
+    .container .slide_img .prev span 
+    {
+        border-color: transparent #fff transparent transparent;
+    }
+
+    .container .slide_img .next span 
+    {
+        border-color: transparent transparent transparent #fff;
+    }
+
+    .container #nav_slide .dots 
+    {
+        width: 12px;
+        height: 12px;
+    }
+}
